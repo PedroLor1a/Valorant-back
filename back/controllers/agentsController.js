@@ -1,7 +1,9 @@
 const axios = require("axios");
 
 const getAllAgents = async () => {
-  const agents = await axios("https://valorant-api.com/v1/agents");
+  const agents = await axios(
+    "https://valorant-api.com/v1/agents?isPlayableCharacter=true"
+  );
   const data = agents.data.data;
   return data;
   // console.log(data);

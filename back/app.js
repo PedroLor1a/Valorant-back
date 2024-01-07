@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = process.env.PORT || 3000;
 const {
   getAllAgents,
@@ -8,6 +9,7 @@ const {
 } = require("./controllers/agentsController");
 
 // Middleware para parsear JSON en las solicitudes
+app.use(cors());
 app.use(express.json());
 
 app.get("/agents", async (req, res) => {
